@@ -25,7 +25,7 @@
         </div>
 
         <div class="weather-box">
-          <div class="temp">{{ Math.round(weather.main.temp) }}</div>
+          <div class="temp">{{ Math.round(weather.main.temp) }}°c</div>
           <div class="weather">{{ weather.weather[0].main }}</div>
         </div>
       </div>
@@ -115,12 +115,30 @@ body {
   transition: 0.4s;
 }
 
+@media screen and (min-width: 450px){
+  #app{
+    width: 450px;
+    height: 800px;
+    margin: 50px auto;
+    border-radius: 20px;
+  }
+  main{
+    border-radius: 20px;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 450px){
+  main{
+    height: 100vh;
+  }
+}
+
 #app.warm {
   background-image: url("./assets/warm-bg.jpg");
 }
 
 main {
-  min-height: 100vh;
   padding: 25px;
   background-image: linear-gradient(
     to bottom,
